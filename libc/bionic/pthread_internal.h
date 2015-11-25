@@ -51,6 +51,8 @@ enum ThreadJoinState {
   THREAD_DETACHED
 };
 
+struct thread_local_dtor;
+
 struct pthread_internal_t {
   struct pthread_internal_t* next;
   struct pthread_internal_t* prev;
@@ -92,6 +94,8 @@ struct pthread_internal_t {
   pthread_mutex_t startup_handshake_mutex;
 
   size_t mmap_size;
+
+  thread_local_dtor* thread_local_dtors;
 
   void* tls[BIONIC_TLS_SLOTS];
 
