@@ -3351,6 +3351,7 @@ static ElfW(Addr) get_elf_exec_load_bias(const ElfW(Ehdr)* elf) {
   return 0;
 }
 
+extern "C" int __set_tls(void*);
 extern "C" void _start();
 
 /*
@@ -3364,6 +3365,9 @@ extern "C" void _start();
  */
 extern "C" ElfW(Addr) __linker_init(void* raw_args) {
   KernelArgumentBlock args(raw_args);
+
+  void* tls[BIONIC_TLS_SLOTS];
+  __set_tls(tls);
 
   ElfW(Addr) linker_addr = args.getauxval(AT_BASE);
   ElfW(Addr) entry_point = args.getauxval(AT_ENTRY);
