@@ -49,7 +49,6 @@ libc_common_src_files := \
     bionic/initgroups.c \
     bionic/ioctl.c \
     bionic/isatty.c \
-    bionic/memmem.c \
     bionic/pututline.c \
     bionic/sched_cpualloc.c \
     bionic/sched_cpucount.c \
@@ -162,6 +161,7 @@ libc_bionic_ndk_src_files := \
     bionic/mbrtoc16.cpp \
     bionic/mbrtoc32.cpp \
     bionic/mbstate.cpp \
+    bionic/memmem.cpp \
     bionic/mempcpy.cpp \
     bionic/mkdir.cpp \
     bionic/mkfifo.cpp \
