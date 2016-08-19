@@ -84,7 +84,7 @@
 #define FLAG_GNU_HASH   0x00000040 // uses gnu hash
 #define FLAG_NEW_SOINFO 0x40000000 // new soinfo format
 
-#define SUPPORTED_DT_FLAGS_1 (DF_1_NOW | DF_1_GLOBAL | DF_1_NODELETE)
+#define SUPPORTED_DT_FLAGS_1 (DF_1_NOW | DF_1_GLOBAL | DF_1_NODELETE | DF_1_PIE)
 
 #define SOINFO_VERSION 2
 
